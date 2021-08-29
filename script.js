@@ -1,10 +1,21 @@
+
 function compute()
 {
     a = document.getElementById("amount").value; 
     /* Input control */
     if (a == "") {
-        return
+        alert("Please, enter a positive number.");
+        document.getElementById('amount').focus();
+        return;
     }
+
+    amnt = parseInt(a)
+    if (amnt < 1) {
+        alert("Please, enter a positive number.");
+        document.getElementById('amount').focus();
+        return;
+    }
+
     r = document.getElementById("rate").value;
     rtext = parseFloat(r).toFixed(1) + '%'
     y = document.getElementById("years").value;
